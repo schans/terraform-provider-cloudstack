@@ -42,6 +42,12 @@ The following arguments are supported:
 * `rule` - (Required) Can be specified multiple times. Each rule block supports
     fields documented below.
 
+* `project` - (Optional) The name or ID of the project in which the security
+    group is created. Changing this forces a new resource to be created.
+
+* `parallelism` (Optional) Specifies how much rules will be created or deleted
+    concurrently. (defaults 2)
+
 The `rule` block supports:
 
 * `cidr_list` - (Optional) A CIDR list to allow access to the given ports.
@@ -59,7 +65,7 @@ The `rule` block supports:
     be specified if the protocol is TCP, UDP, ALL or a valid protocol number.
 
 * `traffic_type` - (Optional) The traffic type for the rule. Valid options are:
-    `ingress` or `egress` (defaults ingress).
+    `ingress` or `egress`. (defaults ingress)
 
 * `user_security_group_list` - (Optional) A list of security groups to apply
     the rules to.
